@@ -1,10 +1,10 @@
 name: Hello world
 on: push
 jobs:
- my-job:
-   runs-on: ubuntu-latest
-   stepts: 
-   - name: step-1
-     run: echo "helloworld"
-   - name: step-2
-     run: echo "learning github actions"
+  my-job:
+    runs-on: ubuntu-latest
+    stepts: 
+    - name: step-1
+      run: echo "helloworld"
+    - name: step-2
+      run: echo "learning github actions"
