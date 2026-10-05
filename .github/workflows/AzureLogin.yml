@@ -1,7 +1,7 @@
 name: create infra azure terraform github action 
 on: 
   push:
-    branchs:
+    branches:
       - feature
 
 permissions:
