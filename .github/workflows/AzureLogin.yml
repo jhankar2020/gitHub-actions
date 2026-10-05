@@ -15,19 +15,21 @@ jobs:
     
       
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+    
 
     - name: azure login
-      uses: azure/login@v3
+      uses: azure/login@v1
       with:
         client_id: ${{ secrets.AZURE_CLIENT_ID }}
         tenant_id: ${{ secrets.AZURE_TENANT_ID }} 
         subscription_id: ${{ secrets.AZURE_SUBSCRITION_ID}}
         
          
-    - name: verify azure login
-      run: |
-        
-        az account show
-        az account list
+    - name: Dummy Azure CLI script
+      uses: azure/cli@v2
+      with:
+        azcliversion: latest
+        inlineScript: |
+          az account show
+          az group list
+          pwd
