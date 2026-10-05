@@ -1,30 +1,11 @@
-name: create infra azure terraform github action 
-on:
-  workflow_dispatch:
+name: first job
+on: 
   push:
-    branches: [ feature ]
-      
-
-permissions:
-  id-token: write
-  contents: read
+    branches:
+      - feature
 jobs:
-  Azure-Terraform:
+  first-job:
     runs-on: ubuntu-latest
-
-    # Checkout the repository to the GitHub Actions runner
-    
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-
-    - name: Azure Login
-      uses: azure/login@v2
-      with:
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-
-
-    - name: Check Azure
-      run: az account show
+    - name: first run
+      run: echo ""first run
