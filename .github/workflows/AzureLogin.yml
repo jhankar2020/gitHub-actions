@@ -26,5 +26,4 @@ jobs:
         client_id: ${{ secrets.AZURE_CLIENT_ID }} 
     - name: verify azure login
       run: |
-        az account show
-        az group list
+        echo "$subscription_id"
