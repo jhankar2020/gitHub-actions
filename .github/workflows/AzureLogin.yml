@@ -15,8 +15,6 @@ jobs:
     
       
     steps:
-    
-
     - name: azure login
       uses: azure/login@v1
       with:
