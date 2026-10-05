@@ -14,7 +14,7 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
     
       
-    stepts:
+    steps:
     - name: Checkout
       uses: action/checkout@v4
 
