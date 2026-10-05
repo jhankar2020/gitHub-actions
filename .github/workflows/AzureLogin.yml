@@ -1,0 +1,28 @@
+name: create infra azure terraform github action 
+on: 
+  push:
+    branchs:
+      - main
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  Azure-Terraform:
+    runs-on: ubuntu-latest
+
+    # Checkout the repository to the GitHub Actions runner
+    name: Checkout
+    uses: action/checkout@v4
+
+    name: azure login
+    uses: azure/login@v2
+    with: 
+      subscription_id: ${{ secrets.AZURE_SUBSCRITION_ID}}
+      tenant_id: ${{ secrets.AZURE_TENANT_ID }}
+      client_id: ${{ secrets.AZURE_CLIENT_ID }}
+      
+    stepts: 
+    - name: verify azure login
+      run: |
+        az account show
+        az group list
